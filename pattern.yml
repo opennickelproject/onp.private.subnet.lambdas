@@ -1,0 +1,32 @@
+metadata:
+  pattern-id: onp.aws.network.model.simplevpc
+  pattern-name: simplevpc
+  latest-version: 1.0.0
+  pattern-owner: Open Nickel Project
+  pattern-owner-shortname: onp
+  pattern-status: draft
+  organisation: Open Nickel Project
+  pattern-category: network
+
+lifecycle:
+  create:
+    commands:
+      - bash lifecycle/create.sh
+
+  delete:
+    commands:
+      - bash lifecycle/delete.sh
+
+  update:
+    commands:
+      - bash lifecycle/update.sh
+
+  upgrade:
+    commands:
+      - bash lifecycle/upgrade.sh
+
+dependencies:
+  - pattern-id: onp.aws.bootstrap.deployment.deploymentbucket
+    version: 1.0.0
+
+
