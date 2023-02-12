@@ -1,31 +1,25 @@
-metadata:
-  pattern-id: onp.aws.network.model.simplevpc
-  pattern-name: simplevpc
-  pattern-version: 1.0.6
-  pattern-description: Amazon Virtual Private Cloud (Amazon VPC) enables you to launch AWS resources into a virtual network that you've defined. This virtual network closely resembles a traditional network that you'd operate in your own data center, with the benefits of using the scalable infrastructure of AWS.
-  organisation-id: onp
-  pattern-categories: 
-                - network
-
+dependencies:
+- pattern-id: onp.aws.bootstrap.deployment.deploymentbucket
+  version: 1.0.0
 lifecycle:
   create:
     commands:
-      - bash lifecycle/create.sh
-
+    - bash lifecycle/create.sh
   delete:
     commands:
-      - bash lifecycle/delete.sh
-
+    - bash lifecycle/delete.sh
   update:
     commands:
-      - bash lifecycle/update.sh
-
+    - bash lifecycle/update.sh
   upgrade:
     commands:
-      - bash lifecycle/upgrade.sh
-
-dependencies:
-  - pattern-id: onp.aws.bootstrap.deployment.deploymentbucket
-    version: 1.0.0
-
-
+    - bash lifecycle/upgrade.sh
+metadata:
+  organisation-id: onp
+  pattern-categories:
+  - Network
+  pattern-description: Place AWS Lambdas in a private subnet and integrate with inbound
+    and outbound API gateways
+  pattern-id: onp.private.subnet.lambdas
+  pattern-name: private subnet lambdas
+  pattern-version: 0.0.1
